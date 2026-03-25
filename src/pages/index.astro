@@ -118,13 +118,13 @@ const work = await Promise.all(
             <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
               {SITE.EMAIL}
             </Link>
-          </li> /
+          </li>
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-2 text-nowrap">
+              {"/"}
               <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
                 {SOCIAL.NAME}
               </Link>
-              {"/"}
             </li>
           ))}
         </ul>
