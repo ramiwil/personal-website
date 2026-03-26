@@ -2,6 +2,7 @@
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
+
 ---
 
 <header>
@@ -13,12 +14,12 @@ import { SITE } from "@consts";
         </div>
       </Link>
       <nav class="flex gap-1">
-        <Link href="/blog">
-          blog
-        </Link>
-        <span>
-          {`/`}
-        </span>
+        {SITE.SHOW_BLOG && (
+          <>
+            <Link href="/blog">blog</Link>
+            <span>{`/`}</span>
+          </>
+        )}
         <Link href="/work">
           work
         </Link>
