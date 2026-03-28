@@ -35,13 +35,43 @@ const work = await Promise.all(
     <h4 class="animate font-semibold text-black dark:text-white">
       Hi, I'm Rami <span class="text-xl">👋🏻</span> 
     </h4>
-    <div class="space-y-16">
+    <div class="space-y-8">
       <section>
-        <article class="space-y-4">
-          <p class="animate">
-            I'm a lil guy
+        <article class="space-y-4 animate">
+          <p>
+            📍 San Jose, CA
           </p>
+          <p class="">
+            Interested in graphics, HPC, AI/ML, systems, and the occasional rabbit hole.
+          </p>
+
+          <p class="">
+            I currently work at NVIDIA as a software engineer as part of the Aerial RAN team, working on mobility models and computational geometry for network planning with digital twins.
+          </p>
+          <p class="">
+            I hold a BS in Computer Science and an MS in Computer Science and Engineering from the University of California, Santa Cruz.
+          </p>
+
         </article>
+      </section>
+
+      <section class="animate space-y-4">
+        <ul class="flex flex-wrap gap-2">
+          Let's connect!
+          <li class="line-clamp-1">
+            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+              {SITE.EMAIL}
+            </Link>
+          </li>
+          {SOCIALS.map(SOCIAL => (
+            <li class="flex gap-x-2 text-nowrap">
+              {"/"}
+              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+                {SOCIAL.NAME}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {SITE.SHOW_BLOG && (
@@ -64,34 +94,36 @@ const work = await Promise.all(
         </section>
       )}
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h5>
-          <Link href="/work">
-            See all work
-          </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {SITE.SHOW_WORK && (
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">
+              Work Experience
+            </h5>
+            <Link href="/work">
+              See all work
+            </Link>
+          </div>
+          <ul class="flex flex-col space-y-4">
+            {work.map(entry => (
+              <li>
+                <div class="text-sm opacity-75">
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                </div>
+                <div class="font-semibold text-black dark:text-white">
+                  {entry.data.company}
+                </div>
+                <div class="text-sm opacity-75">
+                  {entry.data.role}
+                </div>
+                <article>
+                  <entry.Content />
+                </article>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
@@ -111,26 +143,7 @@ const work = await Promise.all(
         </ul>
       </section>
 
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect!
-        </h5>
-        <ul class="flex flex-wrap gap-2">
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-          {SOCIALS.map(SOCIAL => (
-            <li class="flex gap-x-2 text-nowrap">
-              {"/"}
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+
     </div>
   </Container>
 </PageLayout>

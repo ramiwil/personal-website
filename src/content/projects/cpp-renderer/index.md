@@ -1,8 +1,9 @@
 ---
 title: "C++ Renderer"
-description: "Portfolio and blog build with astro."
+description: "Pathtracer built from scratch in C++"
 draft: false
-date: "Mar 18 2024"
-demoURL: "https://astro-sphere-demo.vercel.app"
-repoURL: "https://github.com/markhorn-dev/astro-sphere"
+date: "Mar 18 2026"
+# demoURL: ""
+repoURL: "https://github.com/ramiwil/cpp-renderer"
 ---
+A physically-based path tracer built from scratch in C++ to learn rendering theory and build a foundation for advanced path tracing techniques and graphics research.

@@ -5,6 +5,7 @@ export type Site = {
   NUM_WORKS_ON_HOMEPAGE: number;
   NUM_PROJECTS_ON_HOMEPAGE: number;
   SHOW_BLOG: boolean;
+  SHOW_WORK: boolean;
 };
 
 export type Metadata = {

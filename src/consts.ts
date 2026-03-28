@@ -7,6 +7,7 @@ export const SITE: Site = {
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
   SHOW_BLOG: false,
+  SHOW_WORK: false,
 };
 
 export const HOME: Metadata = {

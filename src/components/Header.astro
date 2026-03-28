@@ -20,12 +20,12 @@ import { SITE } from "@consts";
             <span>{`/`}</span>
           </>
         )}
-        <Link href="/work">
-          work
-        </Link>
-        <span>
-          {`/`}
-        </span>
+        {SITE.SHOW_WORK && (
+          <>
+            <Link href="/work">work</Link>
+            <span>{`/`}</span>
+          </>
+        )}
         <Link href="/projects">
           projects
         </Link>
